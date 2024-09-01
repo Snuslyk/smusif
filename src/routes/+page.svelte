@@ -46,7 +46,7 @@
             release[5].play();
         }
         releases[index] = release;
-        releases = [...releases];
+        // releases = [...releases];
     }
 
     function hoverWhyUs(num: number) {
