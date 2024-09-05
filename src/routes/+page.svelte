@@ -1,32 +1,32 @@
 <script lang="ts">
 
-    import smusif from "$lib/assets/Frame 634.svg"
-    import telegram from "$lib/assets/telegram-svgrepo-com 1.svg"
-    import smusifLogo from "$lib/assets/Smusif-lable 1.png"
-    import smusifNote from "$lib/assets/smusif-logo-0 1.png"
-    import gradientMain from "$lib/assets/purpleGradientMain.svg"
-    import gradientNote from "$lib/assets/purpleGradientNote.svg"
+    import smusif from "$lib/assets/img/Frame 634.svg"
+    import telegram from "$lib/assets/img/telegram-svgrepo-com 1.svg"
+    import smusifLogo from "$lib/assets/img/Smusif-lable 1.png"
+    import smusifNote from "$lib/assets/img/smusif-logo-0 1.png"
+    import gradientMain from "$lib/assets/img/purpleGradientMain.svg"
+    import gradientNote from "$lib/assets/img/purpleGradientNote.svg"
 
     import ArtistCard from "$lib/components/ArtistCard.svelte"
-    import {artists} from "$lib/ts/artists"
+    import {artists} from "$lib/data/artists"
     import leftArrow from "$lib/assets/icons/left-arrow.svg"
     import rightArrow from "$lib/assets/icons/right-arrow.svg"
 
-    import believe from "$lib/assets/believe.png"
-    import zvonko from "$lib/assets/zvonko.svg"
-    import kontor from "$lib/assets/kontor.png"
-    import broma from "$lib/assets/broma.svg"
+    import believe from "$lib/assets/img/believe.png"
+    import zvonko from "$lib/assets/img/zvonko.svg"
+    import kontor from "$lib/assets/img/kontor.png"
+    import broma from "$lib/assets/img/broma.svg"
 
-    import minimum from "$lib/assets/minimum.png"
-    import moneyUp from "$lib/assets/moneyUp.png"
-    import allWorld from "$lib/assets/all-world.png"
-    import fastSup from "$lib/assets/fast-sup.png"
-    import {releases} from "$lib/ts/releases";
+    import minimum from "$lib/assets/img/minimum.png"
+    import moneyUp from "$lib/assets/img/moneyUp.png"
+    import allWorld from "$lib/assets/img/all-world.png"
+    import fastSup from "$lib/assets/img/fast-sup.png"
+    import {releases} from "$lib/data/releases";
     import Releases from "$lib/components/Releases.svelte";
     import type {MouseEventHandler} from "svelte/elements";
 
-    import telegramFooter from "$lib/assets/telegram-footer.svg"
-    import vkFooter from "$lib/assets/vk-footer.svg"
+    import telegramFooter from "$lib/assets/img/telegram-footer.svg"
+    import vkFooter from "$lib/assets/img/vk-footer.svg"
 
     let artistSlider;
     let currentImage: HTMLElement;

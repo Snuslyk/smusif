@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "$lib/css/global.scss"
+    import "$lib/assets/css/global.scss"
 </script>
 
 <div class="content">
