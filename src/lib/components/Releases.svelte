@@ -60,7 +60,7 @@
     <div class="right-part">
         <img src="{buttonIcon}" alt="button-icon">
         <audio bind:this={audioElement}>
-            <source src="{release}" type="audio/wav">
+            <source src="{release}" type="audio/mp3">
         </audio>
     </div>
 </button>
