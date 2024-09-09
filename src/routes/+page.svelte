@@ -31,10 +31,68 @@
     let artistSlider;
     let currentImage: HTMLElement;
 
+    let artistSliderCardId: number = 0;
+    const artistOffset: number[] = [];
+
+    artists.forEach((_, id) => {
+        if (id < artists.length - 2) {
+            artistOffset[id] = id * 280
+        }
+    })
+
+    const sliderClick = (direction: 'left' | 'right'): MouseEventHandler<HTMLButtonElement> => async (event) => {
+        if (direction === 'left') {
+            artistSliderCardId = (artistSliderCardId > 0) ? artistSliderCardId - 1 : artistOffset.length - 1;
+        } else {
+            artistSliderCardId = (artistSliderCardId < artistOffset.length - 1) ? artistSliderCardId + 1 : 0;
+        }
+
+        console.log(artistSliderCardId);
+        artistSlider.scrollLeft = artistOffset[artistSliderCardId];
+    }
+
+    console.log(artistOffset)
+
+    let aboutUsSection;
+    let whyUsSection;
+    let ourArtistsSection;
+    let ourReleasesSection;
+
+    function calculateScroll(section) {
+        const offset = 200;
+        const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = sectionPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    const scrollToSection = (num: number): MouseEventHandler<HTMLButtonElement> => async (event) => {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        switch (num) {
+            case 1:
+                calculateScroll(aboutUsSection);
+                break;
+            case 2:
+                calculateScroll(whyUsSection);
+                break;
+            case 3:
+                calculateScroll(ourArtistsSection);
+                break;
+            case 4:
+                calculateScroll(ourReleasesSection);
+                break;
+        }
+    }
+
     const releasesClick = (release, index): MouseEventHandler<HTMLButtonElement> => async (event) => {
         if (release[4]) {
             releases.forEach((release) => {
                 release[4] = false;
+                release[6] = false;
                 release[5].pause();
             })
         } else {
@@ -46,7 +104,6 @@
             release[5].play();
         }
         releases[index] = release;
-        // releases = [...releases];
     }
 
     function hoverWhyUs(num: number) {
@@ -69,7 +126,6 @@
         }
     }
 
-
 </script>
 
 
@@ -83,10 +139,10 @@
         <nav>
             <ul>
                 <li><a href="/">главная</a></li>
-                <li><a href="/">о нас</a></li>
-                <li><a href="/">почему мы</a></li>
-                <li><a href="/">артисты</a></li>
-                <li><a href="/">партнёры</a></li>
+                <li><a href="#about-us" on:click={scrollToSection(1)}>о нас</a></li>
+                <li><a href="#why-us" on:click={scrollToSection(2)}>почему мы</a></li>
+                <li><a href="#our-artists" on:click={scrollToSection(3)}>артисты</a></li>
+                <li><a href="#our-releases" on:click={scrollToSection(4)}>релизы</a></li>
             </ul>
         </nav>
         <div class="second-logo-animations">
@@ -122,7 +178,7 @@
 </div>
 <div class="sections-pos">
     <div class="sections-container">
-        <section class="about-us">
+        <section bind:this={aboutUsSection} id="about-us">
             <h2>О нас</h2>
             <div class="about-us-content">
                 <p class="about-us-text">Мы — международный музыкальный лейбл, объединяющий таланты со всего мира.
@@ -148,7 +204,7 @@
         </section>
 
 
-        <section class="why-us">
+        <section bind:this={whyUsSection} id="why-us">
             <h2>Почему мы</h2>
             <div class="why-us-container">
                 <div class="why-us-choose">
@@ -182,25 +238,28 @@
             </div>
         </section>
 
-        <section class="our-artists">
+        <section bind:this={ourArtistsSection} id="our-artists">
             <h2>Артисты</h2>
             <div class="artist-slider">
                 <div class="carousel" bind:this={artistSlider}>
                     {#each artists as artist}
-                        <ArtistCard name={artist[0]} avatarSrc={artist[1]}></ArtistCard>
+                        <ArtistCard
+                                    name={artist[0]}
+                                    avatarSrc={artist[1]}
+                        ></ArtistCard>
                     {/each}
                 </div>
 
-                <button class="arrow-button left" on:click={() => artistSlider.scrollLeft -= 280}>
+                <button class="arrow-button left" on:click={sliderClick('left')}>
                     <img src={leftArrow} alt="left arrow">
                 </button>
-                <button class="arrow-button right" on:click={() => artistSlider.scrollLeft += 280}>
+                <button class="arrow-button right" on:click={sliderClick('right')}>
                     <img src={rightArrow} alt="right arrow">
                 </button>
             </div>
         </section>
 
-        <section class="our-releases">
+        <section bind:this={ourReleasesSection} id="our-releases">
             <h2>Релизы</h2>
             <div class="releases">
                 {#each releases as release, index}
@@ -222,8 +281,12 @@
     <div class="footer-things">
         <p>© Smusif 2024</p>
         <div class="footer-icos">
-            <img src="{telegramFooter}" alt="telegram-footer">
-            <img src="{vkFooter}" alt="vk-footer">
+            <a href="https://t.me/smusif_label" class="telegram-link">
+                <img src="{telegramFooter}" alt="telegram-footer">
+            </a>
+            <a href="https://vk.com/smusif" class="link">
+                <img src="{vkFooter}" alt="vk-footer">
+            </a>
         </div>
         <p>support@smusif.ru</p>
     </div>
@@ -248,9 +311,10 @@
     width: 1160px;
     padding: 0 20px;
     p {
-      font-weight: 450;
+      font-weight: 400;
       font-size: 28px;
       line-height: 28px;
+      padding-bottom: 6px;
       color: #FFFFFF66;
     }
   }
@@ -262,10 +326,20 @@
     gap: 20px;
   }
 
+  .telegram-link {
+    display: flex;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .releases {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px
+    gap: 20px;
+
   }
 
   .why-us-container {
@@ -274,7 +348,8 @@
 
   .why-us-choose {
     display: flex;
-    align-items: center;
+    //align-items: center;
+    align-items: end;
     position: relative;
     min-width: 280px;
     min-height: 280px;
@@ -285,7 +360,8 @@
       width: 280px;
       height: 280px;
       object-fit: cover;
-      transition: opacity 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
+      pointer-events: none;
     }
 
     .hover-image {
@@ -294,6 +370,7 @@
 
     .active-image {
       opacity: 1;
+      translate: 0 -30px;
     }
   }
 
@@ -329,11 +406,12 @@
       }
 
       img {
-        transition: transform 0.3s ease; /* Плавный переход для увеличения */
+        transition: 0.4s ease; /* Плавный переход для увеличения */
       }
 
       &:hover img {
-        transform: scale(1.1); /* Увеличение изображения при наведении */
+        transform: translateY(-22px); /* Увеличение изображения при наведении */
+        opacity: 0;
       }
     }
   }
@@ -341,6 +419,11 @@
   .why-us-money-up {
     min-width: 364px;
     max-width: 364px;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     img {
       position: absolute;
@@ -348,12 +431,18 @@
       height: auto;
       top: -12px;
       left: 308px;
+      pointer-events: none;
     }
   }
 
   .why-us-all-world {
     min-width: 336px;
     max-width: 336px;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     img {
       position: absolute;
@@ -361,12 +450,18 @@
       height: auto;
       top: -12px;
       left: 280px;
+      pointer-events: none;
     }
   }
 
   .why-us-fast-sup {
     min-width: 340px;
     max-width: 340px;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     img {
       position: absolute;
@@ -374,6 +469,7 @@
       height: auto;
       top: -12px;
       left: 288px;
+      pointer-events: none;
     }
   }
 
@@ -381,6 +477,11 @@
     position: relative;
     min-width: 360px;
     max-width: 360px;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     img {
       position: absolute;
@@ -388,6 +489,7 @@
       height: auto;
       top: -12px;
       left: 308px;
+      pointer-events: none;
     }
   }
 
@@ -503,6 +605,8 @@
     z-index: -1;
     opacity: 0;
     animation: fadeInUp 1s forwards 0.5s;
+    pointer-events: none;
+    user-select: none;
   }
 
   .smusif-logo {
@@ -513,6 +617,7 @@
     transform: translateY(20px);
     animation: fadeInUp 1s forwards 0.5s;
     z-index: 1;
+    pointer-events: none;
   }
 
   .subtitle {
@@ -570,6 +675,17 @@
     padding: 0 20px;
   }
 
+  section-animation {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  section-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .about-us-content {
     position: relative;
     display: flex; /* Включаем flexbox для контейнера */
@@ -590,6 +706,7 @@
     min-width: 25%;
     right: 0;
     top: -18%;
+    pointer-events: none;
   }
 
   .gradient-note {
@@ -598,6 +715,8 @@
     top: -100%;
     right: -28%;
     z-index: -1;
+    pointer-events: none;
+    user-select: none;
   }
 
   .partners {
@@ -618,6 +737,11 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.04);
+    }
 
     img {
       max-width: 100%;
@@ -633,6 +757,11 @@
 
   .partner-card-long {
     width: 500px;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 
   .believe {
@@ -644,13 +773,13 @@
   }
 
   .sections-pos {
-    display: flex; /* Включаем flexbox */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали (если нужно) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .sections-container section {
-    padding-bottom: 315px; /* Отступ между секциями */
+    padding-bottom: 315px;
   }
 
   .sections-container h2 {

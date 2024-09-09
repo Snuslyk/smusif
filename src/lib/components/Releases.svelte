@@ -22,34 +22,11 @@
 
     console.log(isPlaying)
 
-    function toggleAudio() {
-        if (audioElement) {
-            if (audioElement.paused) {
-                audioElement.play();
-                isPlaying = true;
-                dispatch('playState');
-            } else {
-                audioElement.pause();
-                isPlaying = false;
-                dispatch('stopState');
-            }
-        }
-    }
-
-    function resetAudio() {
-        if (audioElement) {
-            audioElement.currentTime = 0;
-            audioElement.play();
-            isPlaying = true;
-            dispatch('playState');
-        }
-    }
 </script>
 
 <button
         class="release-card {isPlaying ? 'is-playing' : ''}"
-        on:click
-        on:dblclick={resetAudio}>
+        on:click>
     <div class="left-part">
         <img src="{releaseImage}" alt="releaseImg">
         <div class="release-texts">
@@ -78,7 +55,11 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(1.01);
+    }
 
     &.is-playing {
       background-color: #FFFFFF00;
@@ -92,6 +73,7 @@
       width: 52px;
       border-radius: 113px;
       height: auto;
+      pointer-events: none;
     }
   }
 

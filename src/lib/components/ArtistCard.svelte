@@ -30,6 +30,7 @@
     height: 200px;
     margin-bottom: 8px;
     pointer-events: none;
+    user-select: none;
   }
 
   .avatar-img {

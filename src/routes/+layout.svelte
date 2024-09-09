@@ -2,6 +2,8 @@
     import "$lib/assets/css/global.scss"
 </script>
 
+<title>Smusif</title>
+
 <div class="content">
     <slot/>
 </div>

@@ -10,4 +10,10 @@ export let artists = [
     ['Karna.val', karnaValAvatar],
     ['DAASHA', daashaAvatar],
     ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
+    ['Ваня Дмитриенко', vanyaDmitrienkoAvatar],
 ];
