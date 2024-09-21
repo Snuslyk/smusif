@@ -32,13 +32,9 @@
     let currentImage: HTMLElement;
 
     let artistSliderCardId: number = 0;
-    const artistOffset: number[] = [];
-
-    artists.forEach((_, id) => {
-        if (id < artists.length - 2) {
-            artistOffset[id] = id * 280
-        }
-    })
+    const artistOffset: number[] = artists
+        .slice(0, artists.length - 2)
+        .map((_, id) => id * 280);
 
     const sliderClick = (direction: 'left' | 'right'): MouseEventHandler<HTMLButtonElement> => async (event) => {
         if (direction === 'left') {
@@ -187,18 +183,26 @@
                 <img src="{smusifNote}" alt="Note" class="smusif-note">
                 <img src="{gradientNote}" alt="GradientNote" class="gradient-note">
                 <div class="partners">
-                    <div class="partner-card">
-                        <img src="{believe}" alt="believe" class="believe">
-                    </div>
-                    <div class="partner-card partner-card-long">
-                        <img src="{zvonko}" alt="zvonko">
-                    </div>
-                    <div class="partner-card partner-card-long">
-                        <img src="{kontor}" alt="kontor">
-                    </div>
-                    <div class="partner-card">
-                        <img src="{broma}" alt="broma" class="broma">
-                    </div>
+                    <a href="https://www.believe.com/">
+                        <div class="partner-card">
+                            <img src="{believe}" alt="believe" class="believe">
+                        </div>
+                    </a>
+                    <a href="https://zvonkodigital.com/">
+                        <div class="partner-card partner-card-long">
+                            <img src="{zvonko}" alt="zvonko">
+                        </div>
+                    </a>
+                    <a href="https://kontornewmedia.com/">
+                        <div class="partner-card partner-card-long">
+                            <img src="{kontor}" alt="kontor">
+                        </div>
+                    </a>
+                    <a href="https://broma16.ru/">
+                        <div class="partner-card">
+                            <img src="{broma}" alt="broma" class="broma">
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -214,25 +218,29 @@
                     <img src="{minimum}" alt="minimum" class="hover-image" id="image4">
                 </div>
                 <div class="why-us-content">
-                    <div class="why-us-money-up" on:mouseenter={() => hoverWhyUs(1)}>
-                        <img src="{moneyUp}" alt="money-up">
-                        <h3>Высокий доход</h3>
-                        <p>Наш лейбл забирает всего 15% дохода, остальное уходит артисту</p>
+                    <div class="why-us-content-div">
+                        <div class="why-us-money-up" on:mouseenter={() => hoverWhyUs(1)}>
+                            <img src="{moneyUp}" alt="money-up">
+                            <h3>Высокий доход</h3>
+                            <p>Наш лейбл забирает всего 15% дохода, остальное уходит артисту</p>
+                        </div>
+                        <div class="why-us-all-world" on:mouseenter={() => hoverWhyUs(2)}>
+                            <img src="{allWorld}" alt="all-world">
+                            <h3>Международность</h3>
+                            <p>Мы работаем со множеством, как отечественных, так и иностранных агрегаторов</p>
+                        </div>
                     </div>
-                    <div class="why-us-all-world" on:mouseenter={() => hoverWhyUs(2)}>
-                        <img src="{allWorld}" alt="all-world">
-                        <h3>Международность</h3>
-                        <p>Мы работаем со множеством, как отечественных, так и иностранных агрегаторов</p>
-                    </div>
-                    <div class="why-us-fast-sup" on:mouseenter={() => hoverWhyUs(3)}>
-                        <img src="{fastSup}" alt="fast-sup">
-                        <h3>Быстрая поддержка</h3>
-                        <p>Наша поддержка отвечает в течение 4 часов и оперативно разбирает вашу проблему</p>
-                    </div>
-                    <div class="why-us-minimum" on:mouseenter={() => hoverWhyUs(4)}>
-                        <img src="{minimum}" alt="minimum">
-                        <h3>Минимальный вывод</h3>
-                        <p>Минимальная сумма вывода для артиста составляет всего 150 ₽</p>
+                    <div class="why-us-content-div">
+                        <div class="why-us-fast-sup" on:mouseenter={() => hoverWhyUs(3)}>
+                            <img src="{fastSup}" alt="fast-sup">
+                            <h3>Быстрая поддержка</h3>
+                            <p>Наша поддержка отвечает в течение 4 часов и оперативно разбирает вашу проблему</p>
+                        </div>
+                        <div class="why-us-minimum" on:mouseenter={() => hoverWhyUs(4)}>
+                            <img src="{minimum}" alt="minimum">
+                            <h3>Минимальный вывод</h3>
+                            <p>Минимальная сумма вывода для артиста составляет всего 150 ₽</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,617 +303,6 @@
 
 <style lang="scss">
 
-  footer {
-    display: flex;
-    justify-content: center;
-    height: 120px;
-    background-color: #FFFFFF0A;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
+  @import "$lib/assets/css/pagecss.scss";
 
-  .footer-things {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1160px;
-    padding: 0 20px;
-    p {
-      font-weight: 400;
-      font-size: 28px;
-      line-height: 28px;
-      padding-bottom: 6px;
-      color: #FFFFFF66;
-    }
-  }
-
-  .footer-icos {
-    display: flex;
-    margin-left: auto;
-    padding-right: 40px;
-    gap: 20px;
-  }
-
-  .telegram-link {
-    display: flex;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .releases {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-
-  }
-
-  .why-us-container {
-    display: flex;
-  }
-
-  .why-us-choose {
-    display: flex;
-    //align-items: center;
-    align-items: end;
-    position: relative;
-    min-width: 280px;
-    min-height: 280px;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      transition: 0.5s ease-in-out;
-      pointer-events: none;
-    }
-
-    .hover-image {
-      opacity: 0;
-    }
-
-    .active-image {
-      opacity: 1;
-      translate: 0 -30px;
-    }
-  }
-
-  .why-us-content {
-    display: flex;
-    justify-content: end;
-    gap: 20px;
-    flex-wrap: wrap;
-
-    div {
-      background-color: #FFFFFF0A;
-      display: flex;
-      min-height: 160px;
-      padding: 15px 0 0 19px;
-      gap: 16px;
-      align-items: start;
-      flex-direction: column;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-
-      h3 {
-        font-size: 32px;
-        line-height: 35.2px;
-      }
-
-      p {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 26.4px;
-        text-align: start;
-      }
-
-      img {
-        transition: 0.4s ease; /* Плавный переход для увеличения */
-      }
-
-      &:hover img {
-        transform: translateY(-22px); /* Увеличение изображения при наведении */
-        opacity: 0;
-      }
-    }
-  }
-
-  .why-us-money-up {
-    min-width: 364px;
-    max-width: 364px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    img {
-      position: absolute;
-      width: 64px;
-      height: auto;
-      top: -12px;
-      left: 308px;
-      pointer-events: none;
-    }
-  }
-
-  .why-us-all-world {
-    min-width: 336px;
-    max-width: 336px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    img {
-      position: absolute;
-      width: 64px;
-      height: auto;
-      top: -12px;
-      left: 280px;
-      pointer-events: none;
-    }
-  }
-
-  .why-us-fast-sup {
-    min-width: 340px;
-    max-width: 340px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    img {
-      position: absolute;
-      width: 64px;
-      height: auto;
-      top: -12px;
-      left: 288px;
-      pointer-events: none;
-    }
-  }
-
-  .why-us-minimum {
-    position: relative;
-    min-width: 360px;
-    max-width: 360px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    img {
-      position: absolute;
-      width: 64px;
-      height: auto;
-      top: -12px;
-      left: 308px;
-      pointer-events: none;
-    }
-  }
-
-  .no-button-animation {
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInZoom 1.5s forwards;
-  }
-
-  .main-container {
-    width: 100%;
-    max-width: 1160px;
-    padding: 0 20px;
-    margin: 0 auto;
-  }
-
-  header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    animation: fadeInDown 1s forwards;
-    z-index: 100;
-  }
-
-  .smusif-size {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1120px;
-  }
-
-  .logo-animations {
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: logoFadeIn 1.2s forwards;
-  }
-
-  .logo {
-    width: 32px;
-    height: auto;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  .link {
-    display: flex;
-  }
-
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 56px;
-  }
-
-  nav ul li {
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: lighter;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #ffcc00;
-    }
-  }
-
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    max-height: 1200px;
-    min-height: 1000px;
-  }
-
-  .content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto 0;
-    z-index: 1;
-  }
-
-  .gradient {
-    position: absolute;
-    width: 183.42%;
-    height: 236.04%;
-    top: -70%;
-    left: -50%;
-    z-index: -1;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.5s;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .smusif-logo {
-    width: 100%;
-    max-width: 862px;
-    height: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards 0.5s;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .subtitle {
-    font-size: 48px;
-    line-height: 32px;
-    margin-top: 23px;
-    font-weight: 450;
-    color: #fff;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards 0.7s;
-  }
-
-  .application-button {
-    background-color: #FFFFFF0A;
-    color: #ffffff;
-    width: 320px;
-    height: 56px;
-    padding-bottom: 4px;
-    font-size: 32px;
-    font-weight: 300;
-    border-radius: 56px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    cursor: pointer;
-    transition: 0.4s ease;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.9s;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-  }
-
-  .application-button-scale {
-    width: fit-content;
-    margin-top: 60px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  .application-button-pos {
-    display: flex;
-    justify-content: center;
-  }
-
-  .sections-container {
-    margin-top: 120px; /* Отступ сверху для отделения от основного контента */
-    width: 100%;
-    max-width: 1160px;
-    padding: 0 20px;
-  }
-
-  section-animation {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.8s, transform 0.8s;
-  }
-
-  section-animation.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .about-us-content {
-    position: relative;
-    display: flex; /* Включаем flexbox для контейнера */
-    align-items: start; /* Центрируем элементы по вертикали */
-    justify-content: space-between; /* Пространство между текстом и изображением */
-    z-index: 1;
-    flex-direction: column;
-  }
-
-  .about-us-text {
-    font-weight: 200;
-    text-align: left;
-    max-width: 755px;
-  }
-
-  .smusif-note {
-    position: absolute;
-    min-width: 25%;
-    right: 0;
-    top: -18%;
-    pointer-events: none;
-  }
-
-  .gradient-note {
-    position: absolute;
-    width: 100%;
-    top: -100%;
-    right: -28%;
-    z-index: -1;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .partners {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 48px;
-  }
-
-  .partner-card {
-    background-color: #FFFFFF0A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 60px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.04);
-    }
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      pointer-events: none;
-    }
-
-    &:nth-child(3) {
-      margin-left: 80px;
-    }
-  }
-
-  .partner-card-long {
-    width: 500px;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-
-  .believe {
-    padding-bottom: 2px;
-  }
-
-  .broma {
-    padding-bottom: 6px;
-  }
-
-  .sections-pos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .sections-container section {
-    padding-bottom: 315px;
-  }
-
-  .sections-container h2 {
-    font-size: 40px;
-    line-height: 32px;
-    margin-bottom: 100px;
-  }
-
-  .sections-container p {
-    font-size: 32px;
-    line-height: 35.2px;
-  }
-
-  .artist-slider {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:before, &:after {
-      position: absolute;
-      top: auto;
-      height: 800px;
-      width: 180px;
-      z-index: 2;
-      content: '';
-    }
-
-    &:before {
-      left: 0;
-      background: linear-gradient(to right, #000000, #000000CC, #00000000);
-    }
-
-    &:after {
-      right: 0;
-      background: linear-gradient(to left, #000000, #000000CC, #00000000);
-    }
-  }
-
-  .carousel {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-    margin: -300px 0;
-    padding: {
-      top: 300px;
-      bottom: 300px;
-      right: 180px;
-      left: 180px;
-    }
-    overflow: hidden;
-  }
-
-  .arrow-button {
-    position: absolute;
-    top: calc(50% - 34.4px);
-    width: 40px;
-    height: 40px;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #FFFFFF0A;
-    border-radius: 50%;
-    border: 1px solid #FFFFFF14;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    cursor: pointer;
-    transition: 0.4s ease;
-
-    &:hover {
-      transform: scale(1.08);
-      background-color: #FFFFFF14;
-    }
-
-    &.left {
-      left: 400px;
-    }
-
-    &.right {
-      right: 400px;
-    }
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInZoom {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes logoFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 </style>
