@@ -68,11 +68,12 @@
 
   .left-part {
     display: flex;
+    align-items: center;
 
     img {
       width: 52px;
       border-radius: 113px;
-      height: auto;
+      height: 52px;
       pointer-events: none;
     }
   }

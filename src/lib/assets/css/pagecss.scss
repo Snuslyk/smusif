@@ -91,7 +91,8 @@ footer {
     background-color: #FFFFFF0A;
     display: flex;
     min-height: 160px;
-    padding: 15px 0 0 19px;
+    min-width: 96px;
+    padding: 15px 19px;
     gap: 16px;
     align-items: start;
     flex-direction: column;
@@ -103,6 +104,7 @@ footer {
     h3 {
       font-size: 32px;
       line-height: 110%;
+      text-align: start;
     }
 
     p {
@@ -629,6 +631,36 @@ section-animation.active {
 }
 
 @media (max-width: 1132px) {
+  .why-us-content {
+    gap: 18px;
+  }
+  .why-us-content-div {
+    gap: 18px;
+    div {
+      gap: 14px;
+      h3 {
+        font-size: 29px;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+  }
+  .smusif-logo {
+    height: 181px;
+  }
+  .application-button-scale {
+    margin-top: 53px;
+  }
+  .subtitle {
+    font-size: 42px;
+    margin-top: 20px;
+  }
+  .application-button {
+    width: 280px;
+    height: 50px;
+    font-size: 28px;
+  }
   .about-us-text {
     max-width: 660px;
   }
@@ -637,17 +669,18 @@ section-animation.active {
     line-height: 110%;
   }
   .partner-card {
-    width: 248px;
-    height: 56px;
+    width: 257.5px;
+    height: 52px;
+    border-radius: 17px;
 
     img {
-      height: 56%;
+      height: 60%;
       width: auto;
 
     }
   }
   .believe {
-    height: 36% !important;
+    height: 40% !important;
     width: auto;
   }
   .partner-card-long {
@@ -655,18 +688,25 @@ section-animation.active {
   }
   .sections-container h2 {
     font-size: 36px;
-    margin-bottom: 80px;
+    margin-bottom: 85px;
   }
   .partners {
-    margin-top: 44px;
+    margin-top: 40px;
+    gap: 17px;
+
+    a {
+      &:nth-child(3) {
+        margin-left: 68.5px;
+      }
+    }
   }
   .smusif-note {
-    width: 260px;
-    height: 260px;
+    width: 245px;
+    height: 245px;
   }
   .gradient-note {
-    width: 978.71px;
-    height: 1011.21px;
+    width: 922.25px;
+    height: 952.88px;
     top: -96%;
   }
 }
@@ -691,14 +731,50 @@ section-animation.active {
     max-width: 489px;
   }
   .partner-card {
-    width: 220px;
+    width: 257.5px;
   }
   .partner-card-long {
-    width: 420px;
+    width: 429px;
   }
 }
 
 @media (max-width: 1000px) {
+  .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
+    img {
+      width: 60px;
+    }
+  }
+  .why-us-content {
+    gap: 16px;
+  }
+  .why-us-content-div {
+    gap: 16px;
+    div {
+      gap: 12px;
+      min-height: 140px;
+      h3 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .smusif-logo {
+    height: 154px;
+  }
+  .application-button-scale {
+    margin-top: 46px;
+  }
+  .subtitle {
+    font-size: 36px;
+    margin-top: 17px;
+  }
+  .application-button {
+    width: 240px;
+    height: 44px;
+    font-size: 24px;
+  }
   .about-us-text {
     max-width: 570px;
   }
@@ -707,51 +783,127 @@ section-animation.active {
     line-height: 110%;
   }
   .partner-card {
-    width: 200px;
-    height: 52px;
-
-    img {
-      height: 52%;
-      width: auto;
-
-    }
-  }
-  .believe {
-    height: 34% !important;
-    width: auto;
+    width: 215px;
+    height: 44px;
+    border-radius: 14px;
   }
   .partner-card-long {
     width: 400px;
   }
   .sections-container h2 {
     font-size: 32px;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
   }
   .partners {
-    margin-top: 40px;
+    margin-top: 32px;
+    gap: 14px;
+
+    a {
+      &:nth-child(3) {
+        margin-left: 57px;
+      }
+    }
   }
   .smusif-note {
-    width: 240px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
   }
   .gradient-note {
-    width: 903.43px;
-    height: 933.43px;
+    width: 791px;
+    height: 816.8px;
     top: -92%;
   }
 }
 
 @media (max-width: 932px) {
   .partner-card {
-    width: 172px;
+    width: 215px;
   }
   .partner-card-long {
-    width: 372px;
+    width: 358px;
   }
 }
 
 @media (max-width: 860px) {
+  .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
+    img {
+      width: 56px;
+    }
+  }
+  .why-us-content {
+    gap: 14px;
+  }
+  .why-us-content-div {
+    gap: 14px;
+    div {
+      gap: 10px;
+      min-height: 128px;
+      h3 {
+        font-size: 23px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  .smusif-logo {
+    height: 127px;
+  }
+  .application-button-scale {
+    margin-top: 39px;
+  }
+  .subtitle {
+    font-size: 30px;
+    margin-top: 14px;
+  }
+  .application-button {
+    width: 200px;
+    height: 38px;
+    font-size: 20px;
+  }
+  .about-us-text {
+    max-width: 480px;
+  }
+  .sections-container p {
+    font-size: 20px;
+    line-height: 110%;
+  }
+  .partner-card {
+    width: 192.5px;
+    height: 36px;
+    border-radius: 11px;
+  }
+  .believe {
+    height: 34% !important;
+    width: auto;
+  }
+  .partner-card-long {
+    width: 307px;
+  }
+  .sections-container h2 {
+    font-size: 28px;
+    margin-bottom: 55px;
+  }
+  .partners {
+    margin-top: 24px;
+    gap: 11px;
 
+    a {
+      &:nth-child(3) {
+        margin-left: 45.5px;
+      }
+    }
+  }
+  .smusif-note {
+    width: 175px;
+    height: 175px;
+  }
+  .gradient-note {
+    width: 658.8px;
+    height: 680.63px;
+    top: -92%;
+    right: -160px;
+  }
 }
 
 @media (max-width: 780px) {
@@ -759,5 +911,280 @@ section-animation.active {
     nav {
       display: none;
     }
+  }
+  .partner-card {
+    width: 172.5px;
+  }
+  .partner-card-long {
+    width: 287px;
+  }
+}
+
+@media (max-width: 700px) {
+  .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
+    img {
+      width: 52px;
+    }
+  }
+  .why-us-content {
+    gap: 12px;
+  }
+  .why-us-content-div {
+    gap: 12px;
+    div {
+      gap: 8px;
+      min-height: 120px;
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .smusif-logo {
+    height: 100px;
+  }
+  .application-button-scale {
+    margin-top: 32px;
+  }
+  .subtitle {
+    font-size: 24px;
+    margin-top: 11px;
+  }
+  .application-button {
+    width: 160px;
+    height: 32px;
+    font-size: 16px;
+  }
+  .about-us-text {
+    max-width: 380px;
+  }
+  .sections-container p {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .partner-card {
+    width: 150px;
+    height: 28px;
+    border-radius: 8px;
+  }
+  .partner-card-long {
+    width: 236px;
+  }
+  .sections-container h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  .partners {
+    margin-top: 16px;
+    gap: 8px;
+
+    a {
+      &:nth-child(3) {
+        margin-left: 34px;
+      }
+    }
+  }
+  .believe {
+    height: 36% !important;
+    width: auto;
+    padding-bottom: 1px;
+  }
+  .broma {
+    padding-bottom: 4px;
+  }
+  .smusif-note {
+    width: 140px;
+    height: 140px;
+  }
+  .gradient-note {
+    width: 527px;
+    height: 545px;
+    top: -92%;
+    right: -140px;
+  }
+}
+
+@media (max-width: 620px) {
+  .partner-card {
+    width: 130px;
+  }
+  .partner-card-long {
+    width: 216px;
+  }
+}
+
+@media (max-width: 580px) {
+  .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
+    img {
+      width: 48px;
+    }
+  }
+  .why-us-content {
+    gap: 10px;
+  }
+  .why-us-content-div {
+    gap: 10px;
+    div {
+      min-height: 124px;
+      h3 {
+        font-size: 17px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+  .smusif-logo {
+    height: 83px;
+  }
+  .application-button-scale {
+    margin-top: 25px;
+  }
+  .subtitle {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+  .application-button {
+    width: 140px;
+    height: 29px;
+    font-size: 14px;
+  }
+  .about-us-text {
+    max-width: 288px;
+  }
+  .sections-container p {
+    font-size: 12px;
+    line-height: 110%;
+  }
+  .partner-card {
+    width: 117.5px;
+    height: 20px;
+    border-radius: 5px;
+  }
+  .partner-card-long {
+    width: 195px;
+  }
+  .sections-container h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  .partners {
+    margin-top: 8px;
+    gap: 5px;
+
+    a {
+      &:nth-child(3) {
+        margin-left: 22.5px;
+      }
+    }
+  }
+  .believe {
+    height: 36% !important;
+    width: auto;
+    padding-bottom: 0;
+  }
+  .broma {
+    padding-bottom: 2px;
+  }
+  .smusif-note {
+    width: 105px;
+    height: 105px;
+  }
+  .gradient-note {
+    width: 395.3px;
+    height: 408.38px;
+    top: -92%;
+    right: -100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-card {
+    width: 107.5px;
+  }
+  .partner-card-long {
+    width: 165px;
+  }
+}
+
+@media (max-width: 440px) {
+  .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
+    img {
+      width: 44px;
+    }
+  }
+  .why-us-all-world {
+    img {
+      right: -24px;
+    }
+  }
+  .why-us-money-up, .why-us-fast-sup {
+    img {
+      right: -20px;
+    }
+  }
+  .why-us-minimum {
+    img {
+      right: -26px;
+    }
+  }
+  .why-us-content-div {
+    gap: 8px;
+    div {
+      min-height: 100px;
+      h3 {
+        font-size: 14px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .about-us-text {
+    max-width: 258px;
+  }
+  .partner-card {
+    width: 85px;
+  }
+  .partner-card-long {
+    width: 145px;
+  }
+  .smusif-note {
+    top: 0;
+  }
+  .gradient-note {
+    top: -64%
+  }
+}
+
+@media (max-width: 440px) {
+  .about-us-text {
+    max-width: 200px;
+  }
+  .partner-card {
+    width: 75px;
+  }
+  .partner-card-long {
+    width: 135px;
+  }
+}
+
+@media (max-width: 408px) {
+  .smusif-logo {
+    height: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-us-text {
+    max-width: 180px;
+  }
+  .partner-card {
+    width: 65px;
+  }
+  .partner-card-long {
+    width: 125px;
   }
 }
