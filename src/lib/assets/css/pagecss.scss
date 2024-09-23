@@ -380,17 +380,6 @@ main {
   padding: 0 32px;
 }
 
-section-animation {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.8s, transform 0.8s;
-}
-
-section-animation.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .about-us-content {
   position: relative;
   display: flex; /* Включаем flexbox для контейнера */
