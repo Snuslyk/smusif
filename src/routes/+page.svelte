@@ -219,24 +219,24 @@
                 </div>
                 <div class="why-us-content">
                     <div class="why-us-content-div">
-                        <div class="why-us-money-up" on:mouseenter={() => hoverWhyUs(1)}>
+                        <div class="why-us-money-up" role="button" tabindex="0" on:mouseenter={() => hoverWhyUs(1)}>
                             <img src="{moneyUp}" alt="money-up">
                             <h3>Высокий доход</h3>
                             <p>Наш лейбл забирает всего 15% дохода, остальное уходит артисту</p>
                         </div>
-                        <div class="why-us-all-world" on:mouseenter={() => hoverWhyUs(2)}>
+                        <div class="why-us-all-world" role="button" tabindex="0" on:mouseenter={() => hoverWhyUs(2)}>
                             <img src="{allWorld}" alt="all-world">
                             <h3>Международность</h3>
                             <p>Мы работаем со множеством, как отечественных, так и иностранных агрегаторов</p>
                         </div>
                     </div>
                     <div class="why-us-content-div">
-                        <div class="why-us-fast-sup" on:mouseenter={() => hoverWhyUs(3)}>
+                        <div class="why-us-fast-sup" role="button" tabindex="0" on:mouseenter={() => hoverWhyUs(3)}>
                             <img src="{fastSup}" alt="fast-sup">
                             <h3>Быстрая поддержка</h3>
                             <p>Наша поддержка отвечает в течение 4 часов и оперативно разбирает вашу проблему</p>
                         </div>
-                        <div class="why-us-minimum" on:mouseenter={() => hoverWhyUs(4)}>
+                        <div class="why-us-minimum" role="button" tabindex="0" on:mouseenter={() => hoverWhyUs(4)}>
                             <img src="{minimum}" alt="minimum">
                             <h3>Минимальный вывод</h3>
                             <p>Минимальная сумма вывода для артиста составляет всего 150 ₽</p>
