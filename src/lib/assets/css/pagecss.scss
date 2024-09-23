@@ -631,6 +631,23 @@ section-animation.active {
 }
 
 @media (max-width: 1132px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 156px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 376px;
+    }
+
+    &.right {
+      left: 656px;
+    }
+  }
   .why-us-content {
     gap: 18px;
   }
@@ -712,6 +729,23 @@ section-animation.active {
 }
 
 @media (max-width: 1080px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 136px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 356px;
+    }
+
+    &.right {
+      left: 636px;
+    }
+  }
   .why-us-choose {
     display: none;
   }
@@ -738,7 +772,44 @@ section-animation.active {
   }
 }
 
+@media (max-width: 1024px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 104px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 324px;
+    }
+
+    &.right {
+      left: 604px;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 92px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 312px;
+    }
+
+    &.right {
+      left: 592px;
+    }
+  }
   .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
     img {
       width: 60px;
@@ -816,6 +887,23 @@ section-animation.active {
 }
 
 @media (max-width: 932px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 60px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 280px;
+    }
+
+    &.right {
+      left: 560px;
+    }
+  }
   .partner-card {
     width: 215px;
   }
@@ -825,6 +913,23 @@ section-animation.active {
 }
 
 @media (max-width: 860px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 20px;
+    }
+  }
+  .arrow-button {
+    &.left {
+      left: 240px;
+    }
+
+    &.right {
+      left: 520px;
+    }
+  }
   .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
     img {
       width: 56px;
@@ -907,6 +1012,35 @@ section-animation.active {
 }
 
 @media (max-width: 780px) {
+  .carousel {
+    padding: {
+      top: 300px;
+      bottom: 300px;
+      right: 180px;
+      left: 0;
+    }
+  }
+  .arrow-button {
+    z-index: 3;
+    &.left {
+      left: 220px;
+    }
+
+    &.right {
+      left: 500px;
+    }
+  }
+  .artist-slider {
+    translate: -20px 0 0;
+    width: 108%;
+    &:before {
+      left: -12px;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
   .smusif-size {
     nav {
       display: none;
@@ -921,6 +1055,26 @@ section-animation.active {
 }
 
 @media (max-width: 700px) {
+  .arrow-button {
+    &.left {
+      left: 220px;
+    }
+
+    &.right {
+      left: 500px;
+    }
+  }
+  .artist-slider {
+    translate: -60px 0 0;
+    width: 114.6%;
+    &:before {
+      left: 28px;
+    }
+
+    &:after {
+      right: -41px;
+    }
+  }
   .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
     img {
       width: 52px;
@@ -1007,6 +1161,17 @@ section-animation.active {
 }
 
 @media (max-width: 620px) {
+  .artist-slider {
+    translate: -100px 0 0;
+    width: 124%;
+    &:before {
+      left: 68px;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
   .partner-card {
     width: 130px;
   }
@@ -1016,6 +1181,17 @@ section-animation.active {
 }
 
 @media (max-width: 580px) {
+  .artist-slider {
+    translate: -120px 0 0;
+    width: 130%;
+    &:before {
+      left: 88px;
+    }
+
+    &:after {
+      right: -28px;
+    }
+  }
   .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
     img {
       width: 48px;
@@ -1101,6 +1277,17 @@ section-animation.active {
 }
 
 @media (max-width: 480px) {
+  .artist-slider {
+    translate: -168px 0 0;
+    width: 148%;
+    &:before {
+      left: 136px;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
   .partner-card {
     width: 107.5px;
   }
@@ -1110,6 +1297,17 @@ section-animation.active {
 }
 
 @media (max-width: 440px) {
+  .artist-slider {
+    translate: -188px 0 0;
+    width: 158.4%;
+    &:before {
+      left: 156px;
+    }
+
+    &:after {
+      right: -40px;
+    }
+  }
   .why-us-money-up, .why-us-all-world, .why-us-fast-sup, .why-us-minimum {
     img {
       width: 44px;
@@ -1177,7 +1375,32 @@ section-animation.active {
   }
 }
 
+@media (max-width: 400px) {
+  .artist-slider {
+    translate: -212px 0 0;
+    width: 172.6%;
+    &:before {
+      left: 164px;
+    }
+
+    &:after {
+      right: -24px;
+    }
+  }
+}
+
 @media (max-width: 360px) {
+  .artist-slider {
+    translate: -228px 0 0;
+    width: 188%;
+    &:before {
+      left: 156px;
+    }
+
+    &:after {
+      right: -40px;
+    }
+  }
   .about-us-text {
     max-width: 180px;
   }
@@ -1186,5 +1409,19 @@ section-animation.active {
   }
   .partner-card-long {
     width: 125px;
+  }
+}
+
+@media (max-width: 350px) {
+  .artist-slider {
+    translate: -236px 0 0;
+    width: 193.6%;
+    &:before {
+      left: 164px;
+    }
+
+    &:after {
+      right: -40px;
+    }
   }
 }
