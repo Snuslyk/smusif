@@ -58,27 +58,22 @@
 
   @media (max-width: 1132px) {
     .name {
-      font-size: 18px;
+      font-size: 19px;
     }
   }
   @media (max-width: 1000px) {
     .name {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
   @media (max-width: 860px) {
     .name {
-      font-size: 14px;
+      font-size: 17px;
     }
   }
   @media (max-width: 700px) {
     .name {
-      font-size: 12px;
-    }
-  }
-  @media (max-width: 580px) {
-    .name {
-      font-size: 10px;
+      font-size: 16px;
     }
   }
 
