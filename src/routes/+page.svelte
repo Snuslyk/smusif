@@ -183,7 +183,7 @@
             <div class="about-us-content">
                 <p class="about-us-text">Мы — международный музыкальный лейбл, объединяющий таланты со всего мира.
                     Мы продвигаем музыку, чтобы ваш талант зазвучал на всю планету!
-                    Момент мы сотрудничаем с такими всемирно известными агрегаторами, как</p>
+                    На данный момент мы сотрудничаем с такими всемирно известными агрегаторами, как</p>
                 <img src="{smusifNote}" alt="Note" class="smusif-note">
                 <img src="{gradientNote}" alt="GradientNote" class="gradient-note">
                 <div class="partners">
