@@ -1433,6 +1433,12 @@ main {
   }
 }
 
+@media (max-width: 420px) {
+  .artist-slider {
+    translate: -204px 0 0;
+  }
+}
+
 @media (max-width: 408px) {
   .smusif-logo {
     height: auto;
@@ -1453,6 +1459,12 @@ main {
   }
 }
 
+@media (max-width: 380px) {
+  .artist-slider {
+    translate: -224px 0 0;
+  }
+}
+
 @media (max-width: 360px) {
   .telegram-link {
     img {
@@ -1467,7 +1479,7 @@ main {
     }
   }
   .artist-slider {
-    translate: -228px 0 0;
+    translate: -232px 0 0;
     width: 188%;
     &:before {
       left: 156px;
