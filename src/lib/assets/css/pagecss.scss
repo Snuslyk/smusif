@@ -78,6 +78,7 @@ footer {
 }
 
 .why-us-content {
+  z-index: 1;
   display: flex;
   justify-content: end;
   gap: 20px;
@@ -289,7 +290,6 @@ main {
   align-items: center;
   height: 100vh;
   max-height: 1200px;
-  min-height: 1000px;
 }
 
 .content {
@@ -477,7 +477,7 @@ main {
 }
 
 .sections-container section {
-  padding-bottom: 315px;
+  margin-bottom: 315px;
 }
 
 .sections-container h2 {
@@ -525,8 +525,8 @@ main {
   padding: {
     top: 300px;
     bottom: 300px;
-    right: 180px;
-    left: 180px;
+    right: 460px;
+    left: 460px;
   }
   overflow: hidden;
 }
@@ -625,7 +625,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 156px;
+      left: 436px;
     }
   }
   .arrow-button {
@@ -723,7 +723,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 136px;
+      left: 416px;
     }
   }
   .arrow-button {
@@ -767,7 +767,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 104px;
+      left: 384px;
     }
   }
   .arrow-button {
@@ -787,7 +787,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 92px;
+      left: 372px;
     }
   }
   .arrow-button {
@@ -881,7 +881,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 60px;
+      left: 340px;
     }
   }
   .arrow-button {
@@ -907,7 +907,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 20px;
+      left: 300px;
     }
   }
   .arrow-button {
@@ -1006,7 +1006,7 @@ main {
       top: 300px;
       bottom: 300px;
       right: 180px;
-      left: 0;
+      left: 280px;
     }
   }
   .arrow-button {
@@ -1347,6 +1347,9 @@ main {
 }
 
 @media (max-width: 440px) {
+  .sections-container section {
+    margin-bottom: 140px;
+  }
   .about-us-text {
     max-width: 200px;
   }
@@ -1402,6 +1405,10 @@ main {
 }
 
 @media (max-width: 350px) {
+  .sections-container section {
+    margin-bottom: 100px;
+  }
+
   .artist-slider {
     translate: -236px 0 0;
     width: 193.6%;

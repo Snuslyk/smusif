@@ -23,17 +23,19 @@
     import fastSup from "$lib/assets/img/fast-sup.png";
     import {releases} from "$lib/data/releases";
     import Releases from "$lib/components/Releases.svelte";
-    import type {MouseEventHandler} from "svelte/elements";
 
     import telegramFooter from "$lib/assets/img/telegram-footer.svg";
     import vkFooter from "$lib/assets/img/vk-footer.svg";
+    import type {MouseEventHandler} from "svelte/elements";
+    import {onMount} from "svelte";
 
     let artistSlider;
-    let currentImage: HTMLElement;
+    let currentImage: HTMLElement | undefined;
 
     let artistSliderCardId: number = 0;
+
     const artistOffset: number[] = artists
-        .slice(0, artists.length - 2)
+        .slice(0, artists.length)
         .map((_, id) => id * 280);
 
     const sliderClick = (direction: 'left' | 'right'): MouseEventHandler<HTMLButtonElement> => async (event) => {
@@ -46,6 +48,11 @@
         console.log(artistSliderCardId);
         artistSlider.scrollLeft = artistOffset[artistSliderCardId];
     }
+
+    onMount(() => {
+        artistSliderCardId = (artistSliderCardId < artistOffset.length - 1) ? artistSliderCardId + 1 : 0;
+        artistSlider.scrollLeft = artistOffset[artistSliderCardId];
+    })
 
     console.log(artistOffset)
 
@@ -89,15 +96,12 @@
             releases.forEach((release) => {
                 release[4] = false;
                 release[6] = false;
-                release[5].pause();
             })
         } else {
             releases.forEach((release) => {
                 release[4] = false;
-                release[5].pause();
             })
             release[4] = !release[4];
-            release[5].play();
         }
         releases[index] = release;
     }
@@ -277,7 +281,6 @@
                             releaseImage={release[2]}
                             release={release[3]}
                             isPlaying={release[4]}
-                            bind:audioElement={release[5]}
                             on:click={releasesClick(release, index)}
                     ></Releases>
                 {/each}

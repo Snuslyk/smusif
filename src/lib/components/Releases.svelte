@@ -8,15 +8,14 @@
     export let releaseImage: string;
     export let release: string;
 
-    export let audioElement: HTMLAudioElement;
+    let audioElement: HTMLAudioElement;
     let buttonIcon = stopIco;
     export let isPlaying: boolean = false;
 
     const dispatch = createEventDispatcher();
 
     $: buttonIcon = isPlaying ? playIco : stopIco;
-
-    if (audioElement) {
+    $: if (audioElement) {
         isPlaying ? audioElement.play() : audioElement.pause();
     }
 
