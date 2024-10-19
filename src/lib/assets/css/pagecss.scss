@@ -640,6 +640,18 @@ main {
   .why-us-content {
     gap: 18px;
   }
+  .footer-icos {
+    padding-right: 32px;
+  }
+  .footer-icos {
+    padding-right: 32px;
+    gap: 18px;
+  }
+  .footer-things {
+    p {
+      font-size: 26px;
+    }
+  }
   .why-us-content-div {
     gap: 18px;
     div {
@@ -807,6 +819,15 @@ main {
   .why-us-content {
     gap: 16px;
   }
+  .footer-icos {
+    padding-right: 26px;
+    gap: 16px;
+  }
+  .footer-things {
+    p {
+      font-size: 24px;
+    }
+  }
   .why-us-content-div {
     gap: 16px;
     div {
@@ -926,6 +947,15 @@ main {
   }
   .why-us-content {
     gap: 14px;
+  }
+  .footer-icos {
+    padding-right: 22px;
+    gap: 14px;
+  }
+  .footer-things {
+    p {
+      font-size: 22px;
+    }
   }
   .why-us-content-div {
     gap: 14px;
@@ -1072,6 +1102,15 @@ main {
   .why-us-content {
     gap: 12px;
   }
+  .footer-icos {
+    padding-right: 18px;
+    gap: 12px;
+  }
+  .footer-things {
+    p {
+      font-size: 20px;
+    }
+  }
   .why-us-content-div {
     gap: 12px;
     div {
@@ -1188,6 +1227,18 @@ main {
   }
   .why-us-content {
     gap: 10px;
+  }
+  .sections-container p {
+    font-size: 18px;
+  }
+  .footer-icos {
+    padding-right: 12px;
+    gap: 12px;
+  }
+  .footer-things {
+    p {
+      font-size: 18px;
+    }
   }
   .why-us-content-div {
     gap: 10px;
@@ -1312,9 +1363,30 @@ main {
       right: -20px;
     }
   }
+  .telegram-link {
+    img {
+      width: 96%;
+      height: auto;
+    }
+  }
+  .vk-link {
+    img {
+      width: 88%;
+      height: auto;
+    }
+  }
   .why-us-minimum {
     img {
       right: -26px;
+    }
+  }
+  .footer-icos {
+    padding-right: 4px;
+    gap: 8px;
+  }
+  .footer-things {
+    p {
+      font-size: 16px;
     }
   }
   .why-us-content-div {
@@ -1382,6 +1454,18 @@ main {
 }
 
 @media (max-width: 360px) {
+  .telegram-link {
+    img {
+      width: 92%;
+      height: auto;
+    }
+  }
+  .vk-link {
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
   .artist-slider {
     translate: -228px 0 0;
     width: 188%;

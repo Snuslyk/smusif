@@ -295,7 +295,7 @@
             <a href="https://t.me/smusif_label" class="telegram-link">
                 <img src="{telegramFooter}" alt="telegram-footer">
             </a>
-            <a href="https://vk.com/smusif" class="link">
+            <a href="https://vk.com/smusif" class="link vk-link">
                 <img src="{vkFooter}" alt="vk-footer">
             </a>
         </div>

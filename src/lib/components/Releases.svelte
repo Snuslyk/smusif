@@ -85,7 +85,7 @@
   .release-texts {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    margin-left: 20px;
 
     h3 {
       font-weight: 450;
@@ -101,6 +101,133 @@
       line-height: 20px;
       opacity: 40%;
       text-align: left;
+    }
+  }
+
+  @media (max-width: 1132px) {
+    .left-part {
+      img {
+        width: 51px;
+        height: 51px;
+      }
+    }
+    .release-texts {
+      margin-left: 19px;
+      h3 {
+        margin-bottom: 3px;
+      }
+      h4 {
+        font-size: 19px;
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .left-part {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .release-texts {
+      margin-left: 18px;
+      h3 {
+        font-size: 24px;
+        margin-bottom: 2px;
+      }
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+  @media (max-width: 860px) {
+    .left-part {
+      img {
+        width: 49px;
+        height: 49px;
+      }
+    }
+    .release-texts {
+      margin-left: 17px;
+      h3 {
+        font-size: 22px;
+        margin-bottom: 1px;
+      }
+      h4 {
+        font-size: 17px;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .left-part {
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    .release-texts {
+      margin-left: 16px;
+      h3 {
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+      h4 {
+        font-size: 16px;
+      }
+    }
+  }
+  @media (max-width: 580px) {
+    .left-part {
+      img {
+        width: 47px;
+        height: 47px;
+      }
+    }
+    .release-texts {
+      margin-left: 15px;
+      h3 {
+        font-size: 18px;
+        line-height: 20px;
+      }
+      h4 {
+        font-size: 15px;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    .left-part {
+      img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+    .release-texts {
+      margin-left: 14px;
+      h3 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+      h4 {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    .left-part {
+      img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+    .release-texts {
+      margin-left: 14px;
+      h3 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+      h4 {
+        font-size: 14px;
+        line-height: 16px;
+      }
     }
   }
 </style>
