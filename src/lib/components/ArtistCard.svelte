@@ -56,4 +56,30 @@
     font-size: 20px;
   }
 
+  @media (max-width: 1132px) {
+    .name {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .name {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 860px) {
+    .name {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 700px) {
+    .name {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 580px) {
+    .name {
+      font-size: 10px;
+    }
+  }
+
 </style>
