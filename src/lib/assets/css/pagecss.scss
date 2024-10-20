@@ -1436,6 +1436,10 @@ main {
 @media (max-width: 420px) {
   .artist-slider {
     translate: -204px 0 0;
+    width: 166.16%;
+    &:after {
+      right: -16px;
+    }
   }
 }
 
